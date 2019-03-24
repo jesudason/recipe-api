@@ -4,34 +4,24 @@ let morgan = require('morgan');
 let pg = require('pg');
 const PORT = 3000;
 
+// let pool = new pg.Pool({
+//   port: 5433,
+//   password: 'Pudding99!',
+//   database: 'recipebookdb',
+//   max: 10,
+//   host: 'localhost',
+//   user: 'postgres'
+// });
 
 let pool = new pg.Pool({
-  port: 5433,
-  password: 'Pudding99!',
-  database: 'recipebookdb',
+  port: 5432,
+  password: 'bb618f80ef5dece99f3e54f5af0eee8b9f9983124290ebf1467859062eed0dde!',
+  database: 'd5vj4n50kjeb3u',
   max: 10,
-  host: 'localhost',
-  user: 'postgres'
+  host: 'ec2-50-19-109-120.compute-1.amazonaws.com',
+  user: 'bmmtcpxdphgnnp'
 });
 
-// pool.connect((err, db, done) => {
-//   if(err) {
-//     return console.log(err);
-//   }
-//   else {
-//     db.query('SELECT * FROM recipebook."Recipes"', (err, table) => {
-//       if(err) {
-//         return console.log(err)
-//       }
-//       else {
-//         console.log(table.rows[])
-        
-//       }
-//     })
-//   }
-// })
-
-// pool.client
 let app = express();
 
 app.use(bodyParser.json());
